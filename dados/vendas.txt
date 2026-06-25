@@ -1,0 +1,31 @@
+Relatório de Vendas - Janeiro 2024
+
+Receita total: R$ 196.520
+Lucro total: R$ 80.360
+Margem média: 40,9%
+
+Desempenho por região:
+- Sudeste: R$ 107.820 de receita, margem de 40,54%
+- Sul: R$ 50.400 de receita, margem de 37,70%
+- Nordeste: R$ 14.500 de receita, margem de 50,00%
+- Norte: R$ 9.360 de receita, margem de 50,00%
+- Centro-Oeste: R$ 14.440 de receita, margem de 39,61%
+
+Ranking de vendedores por margem:
+1. João: 44,75% de margem, R$ 45.720 de receita
+2. Carlos: 41,05% de margem, R$ 39.100 de receita
+3. Ana: 39,06% de margem, R$ 53.000 de receita
+4. Maria: 39,44% de margem, R$ 58.700 de receita
+
+Produtos mais lucrativos:
+- Notebook Pro: R$ 20.900 de lucro
+- SSD 1TB: R$ 18.480 de lucro
+- Monitor 4K: R$ 16.800 de lucro
+- Headset Pro: R$ 9.100 de lucro
+- Teclado RGB: R$ 7.700 de lucro
+- Mouse Gamer: R$ 7.380 de lucro
+
+Observações:
+Norte e Nordeste têm menor volume mas maior margem percentual.
+SSD 1TB tem alto giro de estoque com margem consistente.
+Produto B concentra 59% dos defeitos de produção.
