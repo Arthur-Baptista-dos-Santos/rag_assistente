@@ -14,7 +14,7 @@ Assistente de perguntas e respostas sobre documentos usando RAG (Retrieval-Augme
 
 ## `O que faz`
 
-Carrega um arquivo de texto, divide em chunks, gera embeddings vetoriais e armazena no ChromaDB. Ao receber uma pergunta, busca os trechos mais relevantes do documento e usa o LLM para gerar uma resposta fundamentada — sem alucinação, sem API paga, 100% local.
+Carrega um arquivo de texto, divide em chunks, gera embeddings vetoriais e armazena no ChromaDB. Ao receber uma pergunta, busca os trechos mais relevantes do documento e usa o LLM para gerar uma resposta fundamentada. Sem alucinação, sem API paga, 100% local.
 
 ## `Arquitetura`
 
