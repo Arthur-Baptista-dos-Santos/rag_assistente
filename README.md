@@ -32,11 +32,11 @@ Pergunta do usuário
 
 ## `Stack`
 
-- **LangChain** — orquestração do pipeline RAG
-- **ChromaDB** — banco de dados vetorial local
-- **Ollama** — execução de LLMs localmente
-- **nomic-embed-text** — modelo de embeddings
-- **llama3.2** — modelo de linguagem para geração de respostas
+- **LangChain**: orquestração do pipeline RAG
+- **ChromaDB**: banco de dados vetorial local
+- **Ollama**: execução de LLMs localmente
+- **nomic-embed-text**: modelo de embeddings
+- **llama3.2**: modelo de linguagem para geração de respostas
 
 ## `Pré-requisitos`
 
