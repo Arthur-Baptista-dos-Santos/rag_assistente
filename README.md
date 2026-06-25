@@ -1,12 +1,22 @@
-# rag_assistente
+# `Rag Assistente`
 
 Assistente de perguntas e respostas sobre documentos usando RAG (Retrieval-Augmented Generation) com LLM local via Ollama.
 
-## O que faz
+## `Tecnologias`
+
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![LangChain](https://img.shields.io/badge/LangChain-0.3-green)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-0.6-purple)
+![Ollama](https://img.shields.io/badge/Ollama-local-black)
+![RAG](https://img.shields.io/badge/RAG-LLM-orange)
+
+---
+
+## `O que faz`
 
 Carrega um arquivo de texto, divide em chunks, gera embeddings vetoriais e armazena no ChromaDB. Ao receber uma pergunta, busca os trechos mais relevantes do documento e usa o LLM para gerar uma resposta fundamentada — sem alucinação, sem API paga, 100% local.
 
-## Arquitetura
+## `Arquitetura`
 
 ```
 Documento (.txt)
@@ -20,7 +30,7 @@ Pergunta do usuário
             └── llama3.2 (Ollama) → resposta final
 ```
 
-## Stack
+## `Stack`
 
 - **LangChain** — orquestração do pipeline RAG
 - **ChromaDB** — banco de dados vetorial local
@@ -28,12 +38,12 @@ Pergunta do usuário
 - **nomic-embed-text** — modelo de embeddings
 - **llama3.2** — modelo de linguagem para geração de respostas
 
-## Pré-requisitos
+## `Pré-requisitos`
 
 - Python 3.10+
 - [Ollama](https://ollama.com) instalado e rodando
 
-## Instalação
+## `Instalação`
 
 ```bash
 # Clone o repositório
@@ -53,7 +63,7 @@ ollama pull llama3.2
 ollama pull nomic-embed-text
 ```
 
-## Uso
+## `Uso`
 
 ```bash
 # Garanta que o Ollama está rodando
@@ -65,7 +75,7 @@ python src/rag.py
 
 Digite perguntas sobre o documento. Digite `sair` para encerrar.
 
-## Exemplo
+## `Exemplo`
 
 ```
 Você: Qual foi a receita total em janeiro?
@@ -75,7 +85,7 @@ Você: Quem foi o vendedor com maior margem?
 Assistente: O vendedor com maior margem foi João, com 44,75%.
 ```
 
-## Estrutura
+## `Estrutura`
 
 ```
 rag_assistente/
@@ -88,10 +98,10 @@ rag_assistente/
 └── README.md
 ```
 
-## Conceitos aplicados
+## `Conceitos aplicados`
 
-- **RAG**: recupera contexto real antes de gerar resposta, eliminando alucinações
-- **Embeddings**: representação vetorial de texto para busca por similaridade semântica
-- **Chunking**: divisão do documento em pedaços com overlap para preservar contexto
-- **LCEL**: LangChain Expression Language — pipeline declarativo com operador `|`
-- **Vector store**: banco otimizado para busca por similaridade (ChromaDB)
+- **`RAG`**: recupera contexto real antes de gerar resposta, eliminando alucinações
+- **`Embeddings`**: representação vetorial de texto para busca por similaridade semântica
+- **`Chunking`**: divisão do documento em pedaços com overlap para preservar contexto
+- **`LCEL`**: (LangChain Expression Language) pipeline declarativo com operador `|`
+- **`Vector store`**: banco otimizado para busca por similaridade (ChromaDB)
