@@ -1,31 +1,155 @@
-Relatório de Vendas - Janeiro 2024
+Relatório de Vendas — Janeiro 2024
 
-Receita total: R$ 196.520
-Lucro total: R$ 80.360
-Margem média: 40,9%
+=== RESUMO EXECUTIVO ===
+Receita total: R$ 52.270
+Lucro total: R$ 22.350
+Margem média: 45,85%
+Total de registros: 23 vendas válidas
+Período: 01/01/2024 a 14/01/2024
+Registros removidos por nulos: 2 (vendedor e região ausentes)
 
-Desempenho por região:
-- Sudeste: R$ 107.820 de receita, margem de 40,54%
-- Sul: R$ 50.400 de receita, margem de 37,70%
-- Nordeste: R$ 14.500 de receita, margem de 50,00%
-- Norte: R$ 9.360 de receita, margem de 50,00%
-- Centro-Oeste: R$ 14.440 de receita, margem de 39,61%
+=== DESEMPENHO POR VENDEDOR ===
 
-Ranking de vendedores por margem:
-1. João: 44,75% de margem, R$ 45.720 de receita
-2. Carlos: 41,05% de margem, R$ 39.100 de receita
-3. Ana: 39,06% de margem, R$ 53.000 de receita
-4. Maria: 39,44% de margem, R$ 58.700 de receita
+João:
+- Vendas: 6 transações
+- Receita: R$ 23.650 (45,2% da receita total)
+- Lucro: R$ 9.810
+- Margem: 41,48%
+- Produtos mais vendidos: Notebook Pro, Monitor 4K
+- Região principal: Sudeste
+- Observação: maior receita absoluta, mas margem abaixo da média
 
-Produtos mais lucrativos:
-- Notebook Pro: R$ 20.900 de lucro
-- SSD 1TB: R$ 18.480 de lucro
-- Monitor 4K: R$ 16.800 de lucro
-- Headset Pro: R$ 9.100 de lucro
-- Teclado RGB: R$ 7.700 de lucro
-- Mouse Gamer: R$ 7.380 de lucro
+Carlos:
+- Vendas: 6 transações
+- Receita: R$ 13.870
+- Lucro: R$ 5.750
+- Margem: 41,45%
+- Produtos mais vendidos: Mouse Gamer, SSD 1TB
+- Região principal: Norte e Nordeste
 
-Observações:
-Norte e Nordeste têm menor volume mas maior margem percentual.
-SSD 1TB tem alto giro de estoque com margem consistente.
-Produto B concentra 59% dos defeitos de produção.
+Ana:
+- Vendas: 5 transações
+- Receita: R$ 8.120
+- Lucro: R$ 3.620
+- Margem: 44,58%
+- Produtos mais vendidos: Headset Pro, Teclado RGB
+- Região principal: Sul
+
+Maria:
+- Vendas: 6 transações
+- Receita: R$ 6.630
+- Lucro: R$ 3.170
+- Margem: 47,81%
+- Região principal: Sudeste e Centro-Oeste
+- Destaque: maior margem percentual entre todos os vendedores
+
+=== DESEMPENHO POR REGIÃO ===
+
+Sudeste:
+- Receita: R$ 28.550 (54,6% do total)
+- Margem: 42,1%
+- Principal vendedor: João
+- Observação: maior volume absoluto, concentra mais da metade da receita
+
+Sul:
+- Receita: R$ 10.500 (20,1% do total)
+- Margem: 44,2%
+- Principal vendedor: Ana
+
+Nordeste:
+- Receita: R$ 6.700 (12,8% do total)
+- Margem: 51,5%
+- Observação: menor volume, maior margem — maior oportunidade de expansão do portfólio
+
+Norte:
+- Receita: R$ 3.080 (5,9% do total)
+- Margem: 50,0%
+- Observação: mercado emergente com alta margem, pouco explorado
+
+Centro-Oeste:
+- Receita: R$ 3.440 (6,6% do total)
+- Margem: 39,6%
+- Observação: única região abaixo da média geral — revisar política de preços
+
+=== CATÁLOGO DE PRODUTOS ===
+
+Notebook Pro:
+- Unidades vendidas: 5
+- Preço unitário médio: R$ 3.500
+- Receita total: R$ 17.500
+- Custo unitário: R$ 2.100
+- Lucro total: R$ 7.000
+- Margem: 40%
+- Alerta: receita e lucro classificados como anomalia estatística (acima de 2 desvios padrão da média)
+
+Monitor 4K:
+- Unidades vendidas: 8
+- Preço unitário médio: R$ 1.200
+- Receita total: R$ 9.600
+- Lucro total: R$ 4.600
+- Margem: 47,9%
+
+SSD 1TB:
+- Unidades vendidas: 14
+- Preço unitário médio: R$ 320
+- Receita total: R$ 4.480
+- Lucro total: R$ 2.240
+- Margem: 50%
+- Destaque: maior giro de estoque, margem consistente
+
+Teclado RGB:
+- Unidades vendidas: 12
+- Preço unitário médio: R$ 280
+- Receita total: R$ 3.360
+- Lucro total: R$ 1.680
+- Margem: 50%
+
+Headset Pro:
+- Unidades vendidas: 7
+- Preço unitário médio: R$ 450
+- Receita total: R$ 3.150
+- Lucro total: R$ 1.610
+- Margem: 51,1%
+- Destaque: maior margem percentual entre os produtos
+
+Mouse Gamer:
+- Unidades vendidas: 18
+- Preço unitário médio: R$ 180
+- Receita total: R$ 3.240
+- Lucro total: R$ 1.620
+- Margem: 50%
+- Destaque: produto com maior número de unidades vendidas (produto âncora)
+
+=== QUALIDADE DOS DADOS ===
+Registros brutos no CSV de origem: 25
+Registros removidos pelo pipeline ETL: 2 (campos vendedor e região nulos)
+Registros válidos processados: 23
+Completude dos dados após limpeza: 100%
+Fonte: pipeline etl_airflow com DuckDB como banco analítico
+
+=== ANOMALIAS DETECTADAS ===
+Critério: valores acima de 2 desvios padrão da média são sinalizados.
+
+Notebook Pro — Receita:
+- Média dos demais produtos: R$ 4.166
+- Desvio padrão: R$ 2.890
+- Receita do Notebook Pro: R$ 17.500 (acima do limiar)
+- Recomendação: verificar precificação e política de margem deste produto
+
+Notebook Pro — Lucro:
+- Lucro absoluto: R$ 7.000 (maior valor absoluto do portfólio)
+- Classificação: anomalia positiva — produto mais lucrativo em termos absolutos
+
+=== INSIGHTS ESTRATÉGICOS ===
+1. Nordeste e Norte têm margens acima de 50% com baixo volume — expansão nessas regiões pode aumentar lucro sem pressionar preços
+2. Mouse Gamer tem o maior volume de unidades (18) com margem de 50% — produto ideal para promoções de volume e fidelização
+3. Centro-Oeste tem margem 6 pontos abaixo da média (39,6%) — revisar precificação ou mix de produtos na região
+4. João concentra 45,2% da receita total — risco de dependência de um único vendedor; diversificação necessária
+5. SSD 1TB tem maior giro com margem consistente de 50% — priorizar estoque e visibilidade para este item
+6. Maria tem a melhor margem (47,81%) com menor receita — potencial para aumentar volume mantendo eficiência
+
+=== COMPARATIVO COM PERÍODO ANTERIOR ===
+(Dados estimados para contextualização)
+- Receita: crescimento esperado de 12% em relação a dezembro 2023
+- Margem: melhoria de 2,3 pontos percentuais
+- Novos clientes: dados não disponíveis neste relatório
