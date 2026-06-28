@@ -1,4 +1,4 @@
-Relatório de Vendas — Janeiro 2024
+﻿Relatório de Vendas - Janeiro 2024
 
 === RESUMO EXECUTIVO ===
 Receita total: R$ 52.270
@@ -59,7 +59,7 @@ Sul:
 Nordeste:
 - Receita: R$ 6.700 (12,8% do total)
 - Margem: 51,5%
-- Observação: menor volume, maior margem — maior oportunidade de expansão do portfólio
+- Observação: menor volume, maior margem - maior oportunidade de expansão do portfólio
 
 Norte:
 - Receita: R$ 3.080 (5,9% do total)
@@ -69,7 +69,7 @@ Norte:
 Centro-Oeste:
 - Receita: R$ 3.440 (6,6% do total)
 - Margem: 39,6%
-- Observação: única região abaixo da média geral — revisar política de preços
+- Observação: única região abaixo da média geral - revisar política de preços
 
 === CATÁLOGO DE PRODUTOS ===
 
@@ -130,23 +130,23 @@ Fonte: pipeline etl_airflow com DuckDB como banco analítico
 === ANOMALIAS DETECTADAS ===
 Critério: valores acima de 2 desvios padrão da média são sinalizados.
 
-Notebook Pro — Receita:
+Notebook Pro - Receita:
 - Média dos demais produtos: R$ 4.166
 - Desvio padrão: R$ 2.890
 - Receita do Notebook Pro: R$ 17.500 (acima do limiar)
 - Recomendação: verificar precificação e política de margem deste produto
 
-Notebook Pro — Lucro:
+Notebook Pro - Lucro:
 - Lucro absoluto: R$ 7.000 (maior valor absoluto do portfólio)
-- Classificação: anomalia positiva — produto mais lucrativo em termos absolutos
+- Classificação: anomalia positiva - produto mais lucrativo em termos absolutos
 
 === INSIGHTS ESTRATÉGICOS ===
-1. Nordeste e Norte têm margens acima de 50% com baixo volume — expansão nessas regiões pode aumentar lucro sem pressionar preços
-2. Mouse Gamer tem o maior volume de unidades (18) com margem de 50% — produto ideal para promoções de volume e fidelização
-3. Centro-Oeste tem margem 6 pontos abaixo da média (39,6%) — revisar precificação ou mix de produtos na região
-4. João concentra 45,2% da receita total — risco de dependência de um único vendedor; diversificação necessária
-5. SSD 1TB tem maior giro com margem consistente de 50% — priorizar estoque e visibilidade para este item
-6. Maria tem a melhor margem (47,81%) com menor receita — potencial para aumentar volume mantendo eficiência
+1. Nordeste e Norte têm margens acima de 50% com baixo volume - expansão nessas regiões pode aumentar lucro sem pressionar preços
+2. Mouse Gamer tem o maior volume de unidades (18) com margem de 50% - produto ideal para promoções de volume e fidelização
+3. Centro-Oeste tem margem 6 pontos abaixo da média (39,6%) - revisar precificação ou mix de produtos na região
+4. João concentra 45,2% da receita total - risco de dependência de um único vendedor; diversificação necessária
+5. SSD 1TB tem maior giro com margem consistente de 50% - priorizar estoque e visibilidade para este item
+6. Maria tem a melhor margem (47,81%) com menor receita - potencial para aumentar volume mantendo eficiência
 
 === COMPARATIVO COM PERÍODO ANTERIOR ===
 (Dados estimados para contextualização)

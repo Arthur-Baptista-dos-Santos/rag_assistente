@@ -157,7 +157,21 @@ Acesse `http://127.0.0.1:7860`. A base vetorial é indexada automaticamente na p
 
 ## `Demonstração`
 
+**Chat com resposta fundamentada**: pergunta "Quais são os produtos mais lucrativos?". O modelo responde citando dados reais do documento sem alucinar.
+
 ![Interface do RAG Assistente](docs/screenshots/interface.png)
+
+---
+
+**Trechos recuperados**: os 4 chunks mais similares à pergunta são exibidos com a fonte (`vendas.txt`) e o conteúdo exato usado como contexto pelo LLM.
+
+![Trechos Recuperados pelo ChromaDB](docs/screenshots/trechos-recuperados.png)
+
+---
+
+**Pergunta de follow-up com insights estratégicos**: segunda pergunta na mesma sessão, com histórico das últimas trocas incluído no prompt.
+
+![Interface com Insights Estrategicos](docs/screenshots/interface-insights.png)
 
 ---
 

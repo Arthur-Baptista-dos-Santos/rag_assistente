@@ -34,23 +34,34 @@ def inicializar() -> str:
 
 def responder(
     mensagem: str,
-    historico: list[list[str]],
-) -> tuple[list[list[str]], list[list[str]], str, str]:
+    historico: list[dict],
+) -> tuple[list[dict], list[dict], str, str]:
     global db
 
     if not mensagem or not mensagem.strip():
         return historico, historico, "", _renderizar_fontes([])
 
     if db is None:
-        historico = historico + [[mensagem, "Base não inicializada. Recarregue a página."]]
-        return historico, historico, "", ""
+        novo = historico + [
+            {"role": "user", "content": mensagem},
+            {"role": "assistant", "content": "Base não inicializada. Recarregue a página."},
+        ]
+        return novo, novo, "", ""
 
-    resposta, chunks = consultar(mensagem, db, [tuple(p) for p in historico])
+    # Converte formato Gradio 6 (dicts) para tuplas aceitas pelo consultar()
+    hist_tuples = []
+    msgs = [m for m in historico]
+    for i in range(0, len(msgs) - 1, 2):
+        if msgs[i]["role"] == "user" and msgs[i + 1]["role"] == "assistant":
+            hist_tuples.append((msgs[i]["content"], msgs[i + 1]["content"]))
 
-    historico = historico + [[mensagem, resposta]]
-    fontes_md = _renderizar_fontes(chunks)
+    resposta, chunks = consultar(mensagem, db, hist_tuples)
 
-    return historico, historico, "", fontes_md
+    novo = historico + [
+        {"role": "user", "content": mensagem},
+        {"role": "assistant", "content": resposta},
+    ]
+    return novo, novo, "", _renderizar_fontes(chunks)
 
 
 def _renderizar_fontes(chunks: list) -> str:
@@ -90,7 +101,7 @@ CSS = """
 with gr.Blocks(title="RAG Assistente de Vendas") as demo:
     gr.Markdown(
         "# `RAG Assistente de Análise de Vendas`\n"
-        "Assistente com recuperação semântica de documentos — LangChain · ChromaDB · Ollama (llama3.2 + nomic-embed-text)"
+        "Assistente com recuperação semântica de documentos. LangChain · ChromaDB · Ollama (llama3.2 + nomic-embed-text)"
     )
 
     with gr.Row():
@@ -156,7 +167,7 @@ with gr.Blocks(title="RAG Assistente de Vendas") as demo:
         outputs=[chatbot, historico_state, msg_input, fontes_md],
     )
     limpar_btn.click(
-        lambda: ([], [], "", "_Conversa limpa._"),
+        lambda: ([], [], "", "_Conversa limpa._"),  # type: ignore[return-value]
         outputs=[chatbot, historico_state, msg_input, fontes_md],
     )
     reindexar_btn.click(reindexar, outputs=status_box)
